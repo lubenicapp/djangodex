@@ -1,10 +1,11 @@
 # Changelog
 
 
-## [Unreleased]
+## [0.2.0]
 
 ### Added
 - run migration on service startup
+- pokemon app  Create
 
 ### Changed
 ### Fixed
