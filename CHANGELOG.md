@@ -5,6 +5,7 @@
 
 ### Added
 - run migration on service startup
+- pokemon app  Create
 
 ### Changed
 ### Fixed

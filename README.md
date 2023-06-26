@@ -13,11 +13,7 @@ at this point, the database is empty. I will write later the auto setup but for 
 
 in the terminal, run:
 
-`docker exec -it pokedex_db`
-
-then
-
-`psql -U joe -d djangodex` (or with whatever .env variable you've set)
+`docker exec -it pokedex_db psql -U joe -d djangodex`
 
 then paste the content of the file data/seed.sql
 
@@ -29,5 +25,11 @@ sorry for the inconvenience, will improve later
 You should be able to access http://0.0.0.0:8000/pokedex
 
 You should be able to access http://0.0.0.0:8000/pokedex/14
+
+You can also access '/pokemon/'
+
+and send a post request to /pokemon/create
+
+a notebook helper is provided in tools to try some routes
 
 ## Explanation for solution
