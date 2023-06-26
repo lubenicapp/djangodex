@@ -11,19 +11,13 @@ run `docker-compose --env-file .env up --build`
 
 at this point, the database is empty. I will write later the auto setup but for the moment
 
-`docker exec -it django_app bash`
-
-then in the container terminal `python manage.py migrate`
-
-&nbsp;
-
-in another terminal:
+in the terminal, run:
 
 `docker exec -it pokedex_db`
 
 then
 
-`psql -U joe -d djangodex`
+`psql -U joe -d djangodex` (or with whatever .env variable you've set)
 
 then paste the content of the file data/seed.sql
 
@@ -36,4 +30,4 @@ You should be able to access http://0.0.0.0:8000/pokedex
 
 You should be able to access http://0.0.0.0:8000/pokedex/14
 
-## Explanation on solution
+## Explanation for solution

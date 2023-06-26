@@ -1,7 +1,16 @@
 # Changelog
 
 
-## [00a900451ad4e26ebfa80df634514c83c3ba2307]
+## [Unreleased]
+
+### Added
+- run migration on service startup
+
+### Changed
+### Fixed
+
+
+## [0.1.0]
 
 ### Added
 - pokedex app with creature model and route for index and detail
