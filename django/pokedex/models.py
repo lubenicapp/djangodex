@@ -10,7 +10,7 @@ class Creature(models.Model):
     hp = models.PositiveSmallIntegerField()
     attack = models.PositiveSmallIntegerField()
     defense = models.PositiveSmallIntegerField()
-    sp_ak = models.PositiveSmallIntegerField()
+    sp_atk = models.PositiveSmallIntegerField()
     sp_def = models.PositiveSmallIntegerField()
     speed = models.PositiveSmallIntegerField()
     generation = models.PositiveSmallIntegerField()
