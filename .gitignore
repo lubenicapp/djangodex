@@ -1,3 +1,6 @@
 .idea
 .venv
 *.pyc
+.env
+Pipfile
+Pipfile.lock
