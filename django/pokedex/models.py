@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Creature(models.Model):
+class PokedexCreature(models.Model):
     pokedex_id = models.PositiveIntegerField()
     name = models.CharField(max_length=64)
     type_1 = models.CharField(max_length=32)
@@ -18,3 +18,21 @@ class Creature(models.Model):
 
     class Meta:
         db_table = 'pokedex_creature'
+
+
+
+class Pokemon(models.Model):
+    pokedex_creature_id = models.ForeignKey(PokedexCreature, on_delete=models.CASCADE)
+    trainer_id = models.PositiveIntegerField(null=True)
+    nickname = models.CharField(max_length=64)
+    level = models.PositiveSmallIntegerField(default=1)
+    experience = models.PositiveIntegerField(default=0)
+
+    @property
+    def is_wild(self):
+        return self.trainer_id is None
+
+    def save(self, *args, **kwargs):
+        if not self.nickname and self.pokedex_creature_id:
+            self.nickname = self.pokedex_creature_id.name
+        super().save(*args, **kwargs)
