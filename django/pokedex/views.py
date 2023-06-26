@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -8,8 +8,8 @@ from .serializers import CreatureSerializer
 
 @api_view()
 def index(request):
-    creatures = Creature.objects.all()
-    return Response(creatures)
+    creatures = Creature.objects.all().values()
+    return JsonResponse(list(creatures), safe=False)
 
 
 @api_view()
