@@ -9,7 +9,9 @@ from .serializers import CreatureSerializer
 
 @api_view()
 def index(request):
-
+    """
+        List of all Pokédex Creatures internal data attributes
+    """
     custom_filter = filter_on_attributes({'type_1', 'type_2', 'legendary'}, request)
     creatures = PokedexCreature.objects.all()
     creatures = creatures.filter(**custom_filter)
@@ -21,6 +23,9 @@ def index(request):
 
 @api_view()
 def detail(request, creature_id):
+    """
+        Detail view of a Pokédex Creature with API attributes
+    """
     creature = PokedexCreature.objects.get(pk=creature_id)
     serializer = CreatureSerializer(creature)
     return Response(serializer.data)

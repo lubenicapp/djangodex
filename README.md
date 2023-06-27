@@ -19,10 +19,10 @@ at this point, the tables are created but the database is empty.
 
 in another terminal, run:
 
-`docker exec -it pokedex_db psql -U joe -d djangodex`
+`docker exec -it pokedex_db bash`
 
-then paste the content of the file data/seed.sql
-(in my case i was only able to seed 180 rows)
+then in the container terminal
+`psql -U joe -d djangodex < seed.sql`
 
 
 ## Usage
