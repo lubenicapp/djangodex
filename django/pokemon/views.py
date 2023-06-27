@@ -10,12 +10,18 @@ from .serializers import PokemonSerializer
 
 @api_view()
 def index(request):
+    """
+        List of all Pokémon with internal data attributes
+    """
     pokemons = Pokemon.objects.all().values()
     return JsonResponse(list(pokemons), safe=False)
 
 
 @api_view()
 def detail(request, pokemon_id):
+    """
+        Detail view of a Pokémon with API attributes
+    """
     creature = Pokemon.objects.get(pk=pokemon_id)
     serializer = PokemonSerializer(creature)
     return Response(serializer.data)
@@ -23,7 +29,12 @@ def detail(request, pokemon_id):
 
 @api_view(['POST'])
 def create(request):
+    """
+        Route for Pokémon creation
 
+        returns:
+            The created Pokémon id
+    """
     try:
         creature = PokedexCreature.objects.get(id=request.data.get('pokedex_creature_id'))
     except PokedexCreature.DoesNotExist:
@@ -42,6 +53,12 @@ def create(request):
 
 @api_view(['POST'])
 def give_xp(request, pokemon_id):
+    """
+        Route for Xp donation
+
+        returns:
+            the total experience of the Pokémon
+    """
     try:
         xp = round(request.data.get('amount'))
         if xp < 0:
