@@ -4,34 +4,51 @@ A Django app inspired by the Pokedex. This is a technical assessment for a job i
 
 ## Setup
 
+### Setup environment variables
 
-Rename sample.env as .env and configure variable if needed
-
-run `docker-compose --env-file .env up --build`
-
-at this point, the database is empty. I will write later the auto setup but for the moment
+Rename sample.env as .env and configure variable if you want to use custom configuration
 
 
-in the terminal, run:
+### Run the containers
+
+run `docker-compose --env-file .env up --build` in a terminal
+
+### Seed the database
+
+at this point, the tables are created but the database is empty.
+
+in another terminal, run:
 
 `docker exec -it pokedex_db psql -U joe -d djangodex`
 
 then paste the content of the file data/seed.sql
 
-sorry for the inconvenience, will improve later
+
+## Usage
+
+The API provide those routes:
+
+GET -  /pokedex/
+GET -  /pokedex/<id>
+
+GET -  /pokemon/
+GET -  /pokemon/<id>
+POST - /pokemon/<id>/give-xp
+POST - /pokemon/create
+
+To try the POST routes, a notebook is provided in tools/demo.ipynb
+with which you can experiment a basic usage.
 
 
-&nbsp;
+## Exercise completion
 
-You should be able to access http://0.0.0.0:8000/pokedex
+### Basic requirements
 
-You should be able to access http://0.0.0.0:8000/pokedex/14
+Not done:
+- /pokedex/ filter on types and other attributes
 
 
-You can also access '/pokemon/'
-
-and send a post request to /pokemon/create
-
-a notebook helper is provided in tools to try some routes
-
-## Explanation for solution
+### Bonus
+Done:
+- docker file
+- docker-compose POSTGRES
