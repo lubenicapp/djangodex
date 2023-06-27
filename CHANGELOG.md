@@ -4,6 +4,8 @@
 
 ### Added
 - Detail view for Pokemon with serialization
+- Pokemon Xp donation
+- scenario in the demo notebook
 
 ### Changed
 
