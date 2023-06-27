@@ -27,14 +27,18 @@ then in the container terminal
 
 ## Usage
 
-The API provide those routes:
+The API provide the following routes:
 
 GET -  /pokedex/ (with query filters) like pokedex/?type_1=Fire
+
 GET -  /pokedex/<id>
 
 GET -  /pokemon/
+
 GET -  /pokemon/<id>
+
 POST - /pokemon/<id>/give-xp
+
 POST - /pokemon/create
 
 To try the POST routes, a notebook is provided in tools/demo.ipynb
