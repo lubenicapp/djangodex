@@ -1,6 +1,17 @@
 # Changelog
 
 
+
+## [0.2.0]
+
+### Added
+- run migration on service startup
+- pokemon app  Create
+
+### Changed
+### Fixed
+
+
 ## [0.1.0]
 
 ### Added

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Creature(models.Model):
+class PokedexCreature(models.Model):
     pokedex_id = models.PositiveIntegerField()
     name = models.CharField(max_length=64)
     type_1 = models.CharField(max_length=32)
