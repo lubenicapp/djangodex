@@ -22,13 +22,14 @@ in another terminal, run:
 `docker exec -it pokedex_db psql -U joe -d djangodex`
 
 then paste the content of the file data/seed.sql
+(in my case i was only able to seed 180 rows)
 
 
 ## Usage
 
 The API provide those routes:
 
-GET -  /pokedex/
+GET -  /pokedex/ (with query filters) like pokedex/?type_1=Fire
 GET -  /pokedex/<id>
 
 GET -  /pokemon/
@@ -44,8 +45,7 @@ with which you can experiment a basic usage.
 
 ### Basic requirements
 
-Not done:
-- /pokedex/ filter on types and other attributes
+All done (but maybe poorly)
 
 
 ### Bonus
