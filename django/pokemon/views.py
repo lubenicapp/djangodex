@@ -7,6 +7,7 @@ from .models import Pokemon
 from pokedex.models import PokedexCreature
 from .serializers import PokemonSerializer
 
+
 @api_view()
 def index(request):
     pokemons = Pokemon.objects.all().values()
@@ -37,3 +38,21 @@ def create(request):
     pokemon.save()
 
     return Response(pokemon.id)
+
+
+@api_view(['POST'])
+def give_xp(request, pokemon_id):
+    try:
+        xp = round(request.data.get('amount'))
+        if xp < 0:
+            raise TypeError
+        pokemon = Pokemon.objects.get(id=pokemon_id)
+    except TypeError:
+        return Response({'message': 'invalid amount'}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    except Pokemon.DoesNotExists:
+        return Response({'message': 'Pokedex Creature does not exist'}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+    pokemon.experience += xp
+    pokemon.save()
+
+    return Response(pokemon.experience)
