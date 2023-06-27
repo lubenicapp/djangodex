@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.0]
+
+### Added
+- Filter on query for pokedex
+
+### Changed
+- setup commands are simpler
+
+### Fixed
+- seed.sql file
+
 ## [0.3.0]
 
 ### Added
