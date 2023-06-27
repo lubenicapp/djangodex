@@ -16,7 +16,6 @@ in the terminal, run:
 
 `docker exec -it pokedex_db psql -U joe -d djangodex`
 
-
 then paste the content of the file data/seed.sql
 
 sorry for the inconvenience, will improve later
@@ -36,4 +35,3 @@ and send a post request to /pokemon/create
 a notebook helper is provided in tools to try some routes
 
 ## Explanation for solution
->>>>>>> develop

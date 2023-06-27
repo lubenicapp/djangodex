@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.0]
+
+### Added
+- Detail view for Pokemon with serialization
+- Pokemon Xp donation
+- scenario in the demo notebook
+
+### Changed
+
+### Fixed
 
 
 ## [0.2.0]
