@@ -12,7 +12,7 @@ def index(request):
     """
         List of all Pokédex Creatures internal data attributes
     """
-    custom_filter = filter_on_attributes({'type_1', 'type_2', 'legendary'}, request)
+    custom_filter = filter_on_attributes({'type_1', 'type_2', 'legendary', 'generation'}, request)
     creatures = PokedexCreature.objects.all()
     creatures = creatures.filter(**custom_filter)
 
