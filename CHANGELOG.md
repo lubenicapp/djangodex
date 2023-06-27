@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Detail view for Pokemon with serialization
+
+### Changed
+
+### Fixed
+
 
 ## [0.2.0]
 
