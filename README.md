@@ -1,6 +1,6 @@
 # DJANGODEX
 
-A Django app inspired by the Pokedex. This is a technical assessment for a job interview.
+A Django exercise inspired by the Pokedex.
 
 ## Setup
 
@@ -44,15 +44,3 @@ POST - `/pokemon/create`
 To try the POST routes, a notebook is provided in tools/demo.ipynb
 with which you can experiment a basic usage.
 
-
-## Exercise completion
-
-### Basic requirements
-
-All done (but maybe poorly)
-
-
-### Bonus
-Done:
-- docker file
-- docker-compose POSTGRES
